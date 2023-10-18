@@ -2,6 +2,7 @@
  * Configuration for the database connection.
  */
 export interface ConfigDBData {
+  Type: string;
   User: string;
   Pass: string;
   Name: string;

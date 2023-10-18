@@ -19,6 +19,7 @@ export class ConfigService {
       Url: env.APP_URL,
     };
     const postgresqlConfiguration: ConfigDBData = {
+      Type: 'postgres',
       User: env.DB_USER,
       Pass: env.DB_PASSWORD,
       Name: env.DB_NAME,
