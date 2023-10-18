@@ -54,7 +54,9 @@ export class PostgresqlModule {
       port: +process.env.DB_PORT || parseInt(db.Port, 10),
       username: process.env.DB_USER || db.User,
       password: process.env.DB_PASSWORD || db.Pass,
-      database: process.env.DB_PORT || db.Name,
+      database: process.env.DB_NAME || db.Name,
+      migrationsTableName: 'migration',
+      migrations: ['src/migration/*.ts'],
     };
   }
 }
