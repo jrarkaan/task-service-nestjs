@@ -71,3 +71,24 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Migrations with Typeorm
+Before we started the topic migration you must setup manually your .env, please change your .env as you needed. because file ormconfig.json must to be generate with the some reason typeorm cli
+reference this configuration, and this file on .gitignore. you must generate with command:
+```bash 
+$ yarn pretypeorm
+```
+after you run command above, file ormconfig.json wil be generate.
+
+to generate file migration honestly you enough run command bellow:
+```bash
+$ yarn typeorm migration:create src/migrations/{name_migration}
+```
+other wise you could be migrate up and down with follow command below:
+```bash
+# migrate up
+$ yarn migrate:up
+
+# migrate down
+$ yarn migrate:down
+```
