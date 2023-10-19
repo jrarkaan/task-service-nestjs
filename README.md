@@ -87,8 +87,8 @@ $ yarn typeorm migration:create src/migrations/{name_migration}
 other wise you could be migrate up and down with follow command below:
 ```bash
 # migrate up
-$ yarn migrate:up
+$ yarn migration:up
 
 # migrate down
-$ yarn migrate:down
+$ yarn migration:down
 ```
