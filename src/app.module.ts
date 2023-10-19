@@ -11,8 +11,8 @@ import { ConfigModule as EnvConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     EnvConfigModule.forRoot(),
-    TaskModule,
     PostgresqlModule.forRoot({ entities: entitiesList }),
+    TaskModule,
     ConfigModule,
   ],
   controllers: [AppController],
