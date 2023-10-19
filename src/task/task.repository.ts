@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, getConnection } from 'typeorm';
+import { Repository } from 'typeorm';
 import { Tasks } from './model/task.entity';
 
 interface IUserRepository {
@@ -15,11 +15,8 @@ export class TaskRepository implements IUserRepository {
   ) {}
   create(data: Tasks): [number, Error] {
     try {
-      // can be used once createConnection is called and is resolved
-      // const connection = getConnection();
-      const result = this.taskRepository.create(data);
+      const result: Tasks = this.taskRepository.create(data);
       this.taskRepository.save(result);
-      console.info('save the data');
     } catch (e) {
       console.error(`--- Task Repository / Create / Error: ${e} ---`);
       return [500, e];

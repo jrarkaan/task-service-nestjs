@@ -3,8 +3,13 @@ import { TaskService } from './task.service';
 import { Response } from 'express';
 import { TaskDto } from './model/task.dto';
 
+interface ITaskController {
+  // @ts-ignore
+  create(@Res() response: Response, @Body() taskPayload: TaskDto): void
+}
+
 @Controller('task')
-export class TaskController {
+export class TaskController implements ITaskController {
   constructor(private taskService: TaskService) {}
   @Post('')
   create(@Res() response: Response, @Body() taskPayload: TaskDto) {
@@ -14,7 +19,7 @@ export class TaskController {
         response.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
           status_code: httpStatus,
           result: null,
-          message: 'internal server errror',
+          message: messageError.message,
         });
       } else {
         response.status(HttpStatus.OK).send({

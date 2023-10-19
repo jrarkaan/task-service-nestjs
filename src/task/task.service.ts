@@ -23,10 +23,11 @@ export class TaskService implements ITaskService {
         created_at: createdAt,
         updated_at: null,
       };
-      console.info("taskEntity: ", taskEntity);
-      this.taskRepo.create(taskEntity);
-    } catch (e) {
-      return [500, e];
+      const [httpStatus, errorMessage] = this.taskRepo.create(taskEntity);
+      return [httpStatus, errorMessage];
+    } catch (errService) {
+      console.error(`--- Task Service / Create / Err: ${errService} ---`);
+      return [500, errService];
     }
     return [200, null];
   }
