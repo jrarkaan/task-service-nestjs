@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { TaskRepository } from './task.repository';
-import { TaskDto } from './model/task.dto';
-import { Tasks } from './model/task.entity';
+import { TaskRepository } from '../repository/task.repository';
+import { TaskDto } from '../model/task.dto';
+import { Tasks } from '../model/task.entity';
 import { v4 as uuidv4 } from 'uuid';
 
 interface ITaskService {

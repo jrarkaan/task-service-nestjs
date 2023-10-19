@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Tasks } from './model/task.entity';
+import { Tasks } from '../model/task.entity';
 
 interface IUserRepository {
   create(data: Tasks): [number, Error];

@@ -1,7 +1,7 @@
 import { Controller, Post, Body, Res, HttpStatus } from '@nestjs/common';
-import { TaskService } from './task.service';
+import { TaskService } from '../service/task.service';
 import { Response } from 'express';
-import { TaskDto } from './model/task.dto';
+import { TaskDto } from '../model/task.dto';
 
 interface ITaskController {
   // @ts-ignore

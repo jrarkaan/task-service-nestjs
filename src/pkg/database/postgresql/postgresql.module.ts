@@ -1,8 +1,8 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { ConfigDBData } from '../../../config/model/config.interface';
-import { ConfigModule } from '../../../config/config.module';
-import { ConfigService } from '../../../config/config.service';
+import { ConfigDBData } from '../../../app/config/model/config.interface';
+import { ConfigModule } from '../../../app/config/config.module';
+import { ConfigService } from '../../../app/config/config.service';
 import { PostgresqlConfig } from './model/postgresql.interface';
 import { PostgresqlConfigError } from './exception/postgresql.error';
 
