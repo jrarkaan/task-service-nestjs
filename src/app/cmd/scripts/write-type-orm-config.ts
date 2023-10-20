@@ -6,6 +6,6 @@ import * as fs from 'fs';
 
 EnvConfigModule.forRoot();
 fs.writeFileSync(
-  '../../ormconfig.json',
+  'ormconfig.json',
   JSON.stringify(PostgresqlModule.getTypeOrmConfig(), null, 2),
 );
