@@ -16,6 +16,8 @@ export class TaskController implements ITaskController {
   @Post('')
   create(@Res() response: Response, @Body() taskPayload: TaskDto): void {
     const httpResponse: HttpResponse = new HttpResponse(response);
+    // const [httpStatus, messageError] = this.taskService.create(taskPayload);
+    // throw  messageError;
     try {
       const [httpStatus, messageError] = this.taskService.create(taskPayload);
       if (messageError !== null) {
@@ -24,6 +26,7 @@ export class TaskController implements ITaskController {
         httpResponse.StatusOK('Success')
       }
     } catch (error) {
+      console.info('error: ', error);
       httpResponse.ServerError(error);
     }
   }
